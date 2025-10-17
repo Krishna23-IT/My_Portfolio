@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murali Krishna Gaddam | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome Free CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-p+H5bF1mH+e6i7oZPCQ6xFkF9H5X3XxN+XPt1rH3vH3qN5iXjH+3q3e9E3HX3g1Z9XYq/LPmRe2FsHf6XtM2Dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+/* Base */
+* {margin:0; padding:0; box-sizing:border-box;}
+html {scroll-behavior: smooth;}
+body {font-family: 'Poppins', sans-serif; background:#0d1117; color:#e0e0e0;}
+a {text-decoration:none; color:inherit;}
+img {max-width:100%; display:block;}
+h1,h2,h3{margin-bottom:0.5em;}
+section{padding:100px 20px;}
+.container{max-width:1200px; margin:0 auto;}
+
+/* Header */
+header{position:fixed; top:0; width:100%; background:#0d1117; z-index:1000; padding:20px 0; border-bottom:1px solid #222;}
+nav{display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; padding:0 20px;}
+nav h1{font-size:1.8em; font-weight:700; color:#00fff0;}
+nav ul{display:flex; gap:25px; list-style:none;}
+nav ul li a{color:#e0e0e0; font-weight:600; transition:0.3s;}
+nav ul li a:hover{color:#00fff0;}
+
+/* About */
+#about{background: linear-gradient(135deg,#0d1117,#1b1f27); display:flex; justify-content:center; align-items:center;}
+#about .content{display:flex; flex-wrap:wrap; align-items:center; gap:40px; max-width:1000px;}
+#about .content .text{flex:1; margin-top:80px;}
+#about .content .text h2{color:#00fff0; font-size:2.5em; margin-bottom:20px; text-align:left;}
+#about .content .text p{margin:20px 0; font-size:1.1em; line-height:1.6;}
+#typed-text{color:#00ffae; font-weight:600;}
+#about .content .image{flex:1; text-align:center;}
+#about .content .image img{border-radius:10%; border:5px solid #00fff0; max-width:250px; transition:0.5s; box-shadow:0 0 20px #00fff0;}
+#about .content .image img:hover{transform:scale(1.05) rotate(3deg);}
+
+/* Skills */
+#skills{background:#11141b;}
+#skills h2{text-align:center; color:#00fff0; margin-bottom:50px;}
+#skills .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:25px;}
+#skills .skill-card{background:linear-gradient(145deg,#1c1f28,#11141b); padding:25px; border-radius:15px; text-align:center; font-weight:600; transition:0.5s; box-shadow:0 5px 15px rgba(0,255,240,0.3);}
+#skills .skill-card:hover{transform:translateY(-10px) scale(1.05); box-shadow:0 15px 30px rgba(0,255,240,0.5); color:#00fff0;}
+
+/* Projects */
+#projects{background:#0d1117;}
+#projects h2{text-align:center; color:#00fff0; margin-bottom:50px;}
+#projects .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;}
+#projects .project-card{background:#1b1f27; border-radius:15px; padding:25px; box-shadow:0 5px 20px rgba(0,255,240,0.2); transition:0.5s; position:relative; overflow:hidden;}
+#projects .project-card:hover{transform:translateY(-10px); box-shadow:0 15px 40px rgba(0,255,240,0.5);}
+#projects .project-card h3{color:#00fff0; margin-bottom:15px;}
+#projects .project-card p{margin-bottom:15px; color:#c0c0c0;}
+.project-buttons a{display:inline-block; margin-right:10px; padding:8px 12px; border-radius:5px; background:#00fff0; color:#0d1117; font-weight:600; transition:0.3s;}
+.project-buttons a:hover{background:#00ffae;}
+
+/* Resume */
+#resume{background:#11141b;}
+#resume h2{text-align:center; color:#00fff0; margin-bottom:50px;}
+#resume .resume-link{text-align:center;}
+#resume .resume-link a{padding:12px 20px; border-radius:10px; background:#00fff0; color:#0d1117; font-weight:600; transition:0.3s;}
+#resume .resume-link a:hover{background:#00ffae;}
+
+/* Contact */
+#contact{background:#1b1f27;}
+#contact h2{text-align:center; color:#00fff0; margin-bottom:50px;}
+#contact .contact-info{text-align:center; max-width:800px; margin:0 auto 20px; line-height:2; font-size:1.1em;}
+/* Social icons under contact */
+.contact-social{margin-top:20px; display:flex; justify-content:center; gap:20px;}
+.contact-social a{
+  font-size:32px;
+  transition:0.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  color:white;
+  box-shadow: 0 0 5px rgba(0, 255, 240, 0.5); /* subtle base glow */
+}
+.contact-social a i {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+  font-size: 28px;
+  color: white;
+}
+
+/* App brand colors */
+.contact-social a.whatsapp{background:#25D366;}
+.contact-social a.instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+.contact-social a.facebook{background:#1877F2;}
+.contact-social a.github{background:#171515;}
+.contact-social a.linkedin{background:#0A66C2;}
+/* Hover effect */
+.contact-social a:hover{transform:scale(1.2); opacity:0.85; box-shadow: 0 0 15px rgba(0,255,240,0.8), 0 0 30px rgba(0,255,240,0.6), 0 0 45px rgba(0,255,240,0.4)}
+
+
+/* Footer */
+footer{background:#0d1117; color:#e0e0e0; text-align:center; padding:25px;}
+
+/* Animations */
+@keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+.content, .skill-card, .project-card{opacity:0; transform:translateY(30px);}
+.content{animation:fadeUp 1s ease forwards;}
+
+/* Responsive */
+@media(max-width:768px){
+  #about .content{flex-direction:column; text-align:center;}
+  nav ul{flex-direction:column; gap:15px; margin-top:10px;}
+  .contact-social{flex-wrap:wrap;}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav>
+    <h1>Murali Krishna Gaddam</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- About -->
+<section id="about">
+  <div class="container content">
+    <div class="text">
+      <h2>About Me</h2>
+      <p>Hello! I'm <span id="typed-text"></span></p>
+    </div>
+    <div class="image">
+      <img src="IMG_20230824_113748_11zon.jpg" alt="Murali Krishna Gaddam">
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Python</div>
+      <div class="skill-card">Java</div>
+      <div class="skill-card">C</div>
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Fruit Disease Detection</h3>
+        <p>An AI-based system to detect diseases in fruits using image processing and machine learning techniques.</p>
+        <div class="project-buttons">
+          <a href="https://github.com/Krishna23-IT" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Missing Child Identification System</h3>
+        <p>A system that helps authorities identify missing children using facial recognition and alert notifications.</p>
+        <div class="project-buttons">
+          <a href="https://github.com/Krishna23-IT" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Secure QR Scanner</h3>
+        <p>A mobile-friendly QR code scanner that detects malicious links and protects users from unsafe websites.</p>
+        <div class="project-buttons">
+          <a href="https://github.com/Krishna23-IT" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resume -->
+<section id="resume">
+  <div class="container">
+    <h2>Resume</h2>
+    <div class="resume-link">
+      <a href="Murali_Krishna_Resume.pdf" target="_blank">View / Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p>Phone: 7569933953</p>
+      <p>Email: gaddammuralikrishna2@gmail.com</p>
+      <p>Address: 9-71/A, Chalvai, Mulugu, Telangana, 506344</p>
+    </div>
+    <div class="contact-social" style="display:flex; justify-content:center; gap:20px; margin-top:20px;">
+      <a href="https://wa.me/917569933953" target="_blank" style="background:#25D366; width:50px; height:50px; display:flex; justify-content:center; align-items:center; border-radius:50%;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" style="width:24px; height:24px; filter: invert(1);" alt="WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/alter__ego_01?igsh=YzJ3bHA1NzZtZ3o0" target="_blank" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); width:50px; height:50px; display:flex; justify-content:center; align-items:center; border-radius:50%;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" style="width:24px; height:24px; filter: invert(1);" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100009065651288" target="_blank" style="background:#1877F2; width:50px; height:50px; display:flex; justify-content:center; align-items:center; border-radius:50%;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" style="width:24px; height:24px; filter: invert(1);" alt="Facebook">
+      </a>
+      <a href="https://github.com/Krishna23-IT" target="_blank" style="background:#171515; width:50px; height:50px; display:flex; justify-content:center; align-items:center; border-radius:50%;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" style="width:24px; height:24px; filter: invert(1);" alt="GitHub">
+      </a>
+      <a href="http://www.linkedin.com/in/muralikrishna2310" target="_blank" style="background:#0A66C2; width:50px; height:50px; display:flex; justify-content:center; align-items:center; border-radius:50%;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" style="width:24px; height:24px; filter: invert(1);" alt="LinkedIn">
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Murali Krishna Gaddam</p>
+</footer>
+
+<script>
+// Typed Text Animation
+const text = "Murali Krishna. I'm passionate about learning new technologies and applying them to real-world challenges. I have strong problem-solving skills and effective communication, which help me collaborate efficiently and deliver results.";
+let i = 0;
+function typeWriter() {
+  if(i < text.length){
+    document.getElementById("typed-text").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 50);
+  }
+}
+window.onload = typeWriter;
+
+// Scroll animations
+const faders = document.querySelectorAll('.content, .skill-card, .project-card');
+const appearOptions = {threshold:0.2, rootMargin:"0px 0px -50px 0px"};
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) return;
+    entry.target.style.opacity = 1;
+    entry.target.style.transform = 'translateY(0)';
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
